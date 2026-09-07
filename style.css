@@ -1,0 +1,117 @@
+#pengqi-fixed-sidebar {
+    position: fixed;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99990;
+    font-family: sans-serif;
+}
+
+#pq-bear {
+    width: 52px;
+    height: 52px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(25, 70, 55, 0.9);
+    box-shadow: 0 4px 18px rgba(0,0,0,.35);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#pq-panel {
+    position: absolute;
+    right: 62px;
+    top: 50%;
+    transform: translateY(-50%) translateX(15px);
+    width: 340px;
+    max-width: calc(100vw - 90px);
+    max-height: 75vh;
+    overflow: hidden;
+    display: none;
+    border: 1px solid rgba(180,220,195,.25);
+    border-radius: 18px;
+    background: rgba(18,35,29,.94);
+    color: #e8f4ed;
+    box-shadow: 0 12px 40px rgba(0,0,0,.45);
+    backdrop-filter: blur(14px);
+}
+
+#pq-panel.show {
+    display: block;
+    animation: pq-in .18s ease-out;
+}
+
+@keyframes pq-in {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+#pq-title {
+    padding: 15px 16px 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#pq-tabs {
+    display: flex;
+    gap: 6px;
+    padding: 0 10px 10px;
+    overflow-x: auto;
+}
+
+#pq-tabs button {
+    border: 0;
+    border-radius: 10px;
+    padding: 8px 11px;
+    background: rgba(255,255,255,.08);
+    color: inherit;
+    white-space: nowrap;
+}
+
+#pq-tabs button:active {
+    background: rgba(130,190,155,.25);
+}
+
+#pq-content {
+    max-height: calc(75vh - 95px);
+    overflow-y: auto;
+    padding: 5px 10px 12px;
+}
+
+.pq-section {
+    padding: 8px 6px;
+    font-weight: bold;
+    opacity: .9;
+}
+
+.pq-item {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 11px;
+    background: rgba(255,255,255,.055);
+    color: inherit;
+    text-decoration: none;
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.pq-item:active {
+    background: rgba(130,190,155,.18);
+}
+
+.pq-tip {
+    padding: 12px 7px;
+    font-size: 12px;
+    opacity: .65;
+}
